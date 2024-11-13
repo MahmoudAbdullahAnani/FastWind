@@ -5,6 +5,7 @@ import { serialize } from 'next-mdx-remote/serialize'
 import Container from '@component/Container'
 import HeroBanner from '@component/HeroBanner'
 import CollectionGrid from '@component/CollectionGrid'
+import HeroSection from '@component/HeroSection/HeroSection'
 
 async function getComponents() {
   const componentsPath = join(process.cwd(), '/src/data/components')
@@ -69,12 +70,13 @@ export default async function Page() {
 
   return (
     <>
-      <HeroBanner title={process.env.NAME_PROJECT} subtitle="Free Open Source Tailwind CSS Components">
+      {/* <HeroBanner title={process.env.NAME_PROJECT} subtitle="Free Open Source Tailwind CSS Components">
         {process.env.NAME_PROJECT} is a collection of free Tailwind CSS components that can be used in your next
         project. With a range of components, you can build your next marketing website, admin
         dashboard, eCommerce store and much more.
-      </HeroBanner>
-
+      </HeroBanner> */}
+      <HeroSection />
+      
       <Container id="mainContent" classNames="pb-8 lg:pb-12">
         <ul className="space-y-8">
           {componentsByCategory.map(({ categoryTitle, componentItems = [] }) => {
