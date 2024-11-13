@@ -35,7 +35,9 @@ const inter = Inter({
   variable: '--font-inter',
 })
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+
+
   return (
     <html className="h-full scroll-pt-20 scroll-smooth" lang="en" dir="ltr">
       <body className={`${inter.variable} font-sans antialiased`}>
@@ -46,7 +48,7 @@ export default function RootLayout({ children }) {
           Skip to Main Content
         </a>
 
-        <Header />
+        <Header  />
         <HeaderBanner />
 
         <main className="bg-white">{children}</main>

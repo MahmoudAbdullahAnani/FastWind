@@ -1,5 +1,8 @@
 {
-  "name": "hyperui",
+  "name": "fastwind",
+  "version": "1.0.0",
+  "description": "",
+  "slug": "fast-wind",
   "scripts": {
     "start:dev": "next dev --turbo",
     "build": "next build",
@@ -7,6 +10,8 @@
     "format": "prettier . --write"
   },
   "dependencies": {
+    "@headlessui/react": "^2.2.0",
+    "@heroicons/react": "^2.1.5",
     "next": "14.2.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

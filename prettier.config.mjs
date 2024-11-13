@@ -12,5 +12,4 @@ const prettierConfig = {
   quoteProps: 'as-needed',
   plugins: ['prettier-plugin-tailwindcss'],
 }
-w
 export default prettierConfig

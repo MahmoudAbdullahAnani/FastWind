@@ -10,7 +10,10 @@ const tailwindConfig = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    
+  ],
 }
 
 export default tailwindConfig

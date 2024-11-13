@@ -10,6 +10,7 @@ export default function HeaderSearch() {
   const routerPathname = usePathname()
 
   const refDropdown = useRef(null)
+  const intputRef = useRef(null)
 
   const [showDropdown, setShowDropdown] = useState(false)
   const [initialResults, setInitialResults] = useState([])
@@ -70,6 +71,12 @@ export default function HeaderSearch() {
 
     return searchJson
   }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'k' && e.ctrlKey) {
+      e.preventDefault()
+      intputRef?.current?.focus()
+    }
+  })
 
   return (
     <div ref={refDropdown} className="relative flex h-16 max-w-[300px] flex-1 items-center">
@@ -79,6 +86,7 @@ export default function HeaderSearch() {
         </label>
 
         <input
+          ref={intputRef}
           type="text"
           onInput={(e) => setSearchQuery(e.currentTarget.value)}
           onFocus={() => setShowDropdown(true)}
@@ -87,6 +95,11 @@ export default function HeaderSearch() {
           id="SiteSearch"
           className="w-full rounded-md border-gray-200 sm:text-sm"
         />
+
+        <div onClick={() => intputRef.current.focus()} className="cursor-text absolute top-[50%] right-[5%] opacity-50 translate-y-[-50%] flex gap-2 place-content-center">
+          <span className={`border rounded-lg h-fit text-[12px] w-fit px-2 py-1`}>ctrl</span>
+          <span className={`border rounded-lg h-fit text-[12px] w-fit px-2 py-1`}>k</span>
+        </div>
 
         <button tabIndex={-1} className="sr-only">
           Submit

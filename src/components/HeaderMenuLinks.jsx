@@ -1,9 +1,13 @@
 import Link from 'next/link'
+import LangBtn, { IconClick, IconTop, langs } from './external/Lang/LangBtn'
 
 export default function HeaderMenuLinks({ menuLinks, navClass = '', ulClass = '' }) {
   return (
     <nav className={navClass}>
       <ul className={ulClass}>
+         <div className="sm:hidden block">
+            <LangBtn dataMenu={langs} iconClick={<IconClick />} iconView={<IconTop />}/>
+          </div>
         {menuLinks.map(({ href, title }) => {
           return (
             <li key={href}>
@@ -16,6 +20,7 @@ export default function HeaderMenuLinks({ menuLinks, navClass = '', ulClass = ''
             </li>
           )
         })}
+        
       </ul>
     </nav>
   )
