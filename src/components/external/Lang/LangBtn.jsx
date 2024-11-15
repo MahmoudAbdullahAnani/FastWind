@@ -23,17 +23,17 @@ export const langs = [
 
 export function IconTop() {
   return <span className="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                <ChevronUpDownIcon aria-hidden="true" className="size-5 text-gray-400" />
-              </span>
+    <ChevronUpDownIcon aria-hidden="true" className="size-5 text-gray-400" />
+  </span>
 }
 export function IconClick() {
   return <span className="absolute inset-y-0 right-0 flex items-center pr-4 text-indigo-600 group-data-[focus]:text-white [.group:not([data-selected])_&]:hidden">
-                <CheckIcon aria-hidden="true" className="size-5" />
-              </span>
+    <CheckIcon aria-hidden="true" className="size-5" />
+  </span>
 }
 
 
-export default function LangBtn({dataMenu, iconView, iconClick}) {
+export default function LangBtn({ dataMenu, iconView, iconClick }) {
   const [selected, setSelected] = useState(langs[0])
 
   return (
@@ -42,7 +42,7 @@ export default function LangBtn({dataMenu, iconView, iconClick}) {
       <div className="relative mt-2">
         <ListboxButton className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm/6">
           <span className="flex items-center">
-            <Image aria-hidden="true" width={19} height={19} quality={100}  alt="" src={selected.avatar} className="" />
+            <Image aria-hidden="true" width={19} height={19} quality={100} alt="" src={selected.avatar} className="" />
             <span className="ml-3 block truncate">{selected.name}</span>
           </span>
           {iconView}

@@ -12,7 +12,7 @@ export default function BtnSocial({ icon, title, showTitle = false, ...props }) 
   )
 }
 
-export function IconGithub({ showK, stargazers_count }) {
+export function IconGithub({ showK, stargazers_count, styleSpan }) {
 
   return (
     <div title="GitHub Repo" className={`flex`}>
@@ -24,7 +24,7 @@ export function IconGithub({ showK, stargazers_count }) {
         />
       </svg>
       {showK && (
-        <span className="text-sm font-medium text-gray-700">{stargazers_count}K</span>
+        <span className={`text-sm font-medium text-gray-700 ${styleSpan}`}>{stargazers_count}K</span>
       )}
     </div>
   )

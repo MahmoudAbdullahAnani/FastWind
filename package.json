@@ -4,7 +4,7 @@
   "description": "",
   "slug": "fast-wind",
   "scripts": {
-    "start:dev": "next dev --turbo",
+    "start:dev": "next dev --turbo --port 3001",
     "build": "next build",
     "lint": "next lint --fix",
     "format": "prettier . --write"

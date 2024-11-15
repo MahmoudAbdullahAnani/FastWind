@@ -24,6 +24,7 @@ export default function Header() {
   const getStartOnGitHub = async () => {
     const stargazers = await fetch("https://api.github.com/repos/MahmoudAbdullahAnani/FastWind").then(res => res.json()).then(res => res.stargazers_count)
     setStargazers_count(stargazers);
+    window.sessionStorage.setItem('stargazers_count', stargazers)
     return stargazers
   }
   useEffect(() => {
@@ -63,7 +64,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <BrandLogo />
 
-          <HeaderMenuLinks menuLinks={menuLinks} navClass="hidden md:block" ulClass="gap-4 flex" />
+          <HeaderMenuLinks menuLinks={menuLinks} navClass="hidden sm:block" ulClass="gap-4 flex" />
         </div>
 
         <div className="sm:flex grid grid-cols-3 gap-2 sm:gap-4">
@@ -71,7 +72,7 @@ export default function Header() {
             <HeaderSearch />
           </div>
 
-          <div className="flex flex-1 items-center justify-end gap-2 sm:gap-4">
+          <div className="hide-in-range flex flex-1 items-center justify-end gap-2 sm:gap-4">
             <BtnSocial href="https://github.com/MahmoudAbdullahAnani/FastWind"
               rel="noreferrer"
               target="_blank"
@@ -84,7 +85,7 @@ export default function Header() {
 
               className="sm:inline-flex hidden items-center gap-[3px] text-gray-900 hover:opacity-75" icon={<div title='telegram channel'>
                 <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" className="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
-              </div>} title={<span title='telegram channel' className={`sm:block hidden`}> Telegram </span>}
+              </div>} title={<span title='telegram channel' className={`[@media(min-width:850px)]:block hidden`}> Telegram </span>}
             />
             <div className="hidden sm:flex gap-2">
               <LangBtn dataMenu={langs} iconClick={<IconClick />} iconView={<IconTop />} />
@@ -92,6 +93,10 @@ export default function Header() {
             <BtnSwitcherThem />
 
             <HeaderMenu showMenu={showMenu} handleSetShowMenu={setShowMenu} menuLinks={menuLinks} />
+          </div>
+          <div className={`sm:flex items-center hidden`}>
+            <HeaderMenu cuestemScreen={true} showMenu={showMenu} handleSetShowMenu={setShowMenu} menuLinks={menuLinks} />
+
           </div>
         </div>
       </Container>

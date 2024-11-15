@@ -10,7 +10,7 @@ export default function HeaderSearch() {
   const routerPathname = usePathname()
 
   const refDropdown = useRef(null)
-  const intputRef = useRef(null)
+  const inputRef = useRef(null)
 
   const [showDropdown, setShowDropdown] = useState(false)
   const [initialResults, setInitialResults] = useState([])
@@ -35,7 +35,7 @@ export default function HeaderSearch() {
 
     getSearchResults()
 
-    return () => {}
+    return () => { }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showDropdown])
 
@@ -74,9 +74,12 @@ export default function HeaderSearch() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'k' && e.ctrlKey) {
       e.preventDefault()
-      intputRef?.current?.focus()
+      inputRef?.current?.focus()
     }
   })
+
+  const [isInputFocused, setisInputFocused] = useState(false)
+
 
   return (
     <div ref={refDropdown} className="relative flex h-16 max-w-[300px] flex-1 items-center">
@@ -86,20 +89,22 @@ export default function HeaderSearch() {
         </label>
 
         <input
-          ref={intputRef}
+          ref={inputRef}
           type="text"
+          onFocus={() => { setisInputFocused(true); setShowDropdown(true) }} onBlur={() => setisInputFocused(false)}
           onInput={(e) => setSearchQuery(e.currentTarget.value)}
-          onFocus={() => setShowDropdown(true)}
           value={searchQuery}
           placeholder="Search..."
           id="SiteSearch"
           className="w-full rounded-md border-gray-200 sm:text-sm"
         />
 
-        <div onClick={() => intputRef.current.focus()} className="cursor-text absolute top-[50%] right-[5%] opacity-50 translate-y-[-50%] flex gap-2 place-content-center">
-          <span className={`border rounded-lg h-fit text-[12px] w-fit px-2 py-1`}>ctrl</span>
-          <span className={`border rounded-lg h-fit text-[12px] w-fit px-2 py-1`}>k</span>
-        </div>
+        {!isInputFocused &&
+          <div onClick={() => inputRef.current.focus()} className="cursor-text absolute top-[50%] right-[5%] opacity-50 translate-y-[-50%] flex gap-[.1rem] place-content-center">
+            <span className={`border rounded-lg h-fit text-[12px] w-fit px-2 py-1`}>ctrl</span>
+            <span className={`border rounded-lg h-fit text-[12px] w-fit px-2 py-1`}>k</span>
+          </div>
+        }
 
         <button tabIndex={-1} className="sr-only">
           Submit
