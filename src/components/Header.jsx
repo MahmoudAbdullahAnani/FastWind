@@ -59,7 +59,7 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky inset-x-0 top-0 z-50 border-b border-gray-200 bg-white">
+    <header className="sticky inset-x-0 top-0 z-10 border-b border-gray-200 bg-white">
       <Container classNames="relative flex h-16 items-center justify-between gap-4 sm:gap-8">
         <div className="flex items-center gap-4">
           <BrandLogo />
@@ -67,8 +67,8 @@ export default function Header() {
           <HeaderMenuLinks menuLinks={menuLinks} navClass="hidden sm:block" ulClass="gap-4 flex" />
         </div>
 
-        <div className="sm:flex grid grid-cols-3 gap-2 sm:gap-4">
-          <div className={`col-span-2`}>
+        <div className="sm:flex grid grid-cols-3 ">
+          <div className={`col-span-2 mx-2`}>
             <HeaderSearch />
           </div>
 

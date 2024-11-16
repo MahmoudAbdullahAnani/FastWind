@@ -12,7 +12,7 @@ export default function HeaderBanner() {
   }, [])
   return (
     <section className="-mt-px border-y border-gray-200 bg-gray-100">
-      <div className={`sticky top-0 z-50 flex gap-2 py-1 text-[12px] justify-center items-center bg-black text-white`}>
+      <div className={`sticky top-0 z-10 flex gap-2 py-1 text-[12px] justify-center items-center bg-black text-white`}>
         <img src="https://flagcdn.com/80x60/ps.png" alt="Palestine Flag" className="size-6" />
         <div>
           <p>Standing with Palestine is a humanitarian duty. <Link className="underline hover:text-gray-500" href={"https://ar.wikipedia.org/wiki/%D8%B6%D8%AD%D8%A7%D9%8A%D8%A7_%D8%A7%D9%84%D8%AD%D8%B1%D8%A8_%D8%A7%D9%84%D9%81%D9%84%D8%B3%D8%B7%D9%8A%D9%86%D9%8A%D8%A9_%D8%A7%D9%84%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A%D8%A9_2023"}>Source</Link></p>

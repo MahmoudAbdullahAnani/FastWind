@@ -4,7 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 *::selection {
   background-color: #37a9a55c;
   color: white;
@@ -14,7 +13,35 @@
   .hide-in-range {
     display: none !important;
   }
-
-
 }
 
+/* @keyframes mask-window {
+  0% {
+    transform: translateY(0px);
+  }
+  20% {
+    transform: translateY(-42px);
+  }
+  40% {
+    transform: translateY(-84px);
+  }
+  60% {
+    transform: translateY(-126px);
+  }
+  80% {
+    transform: translateY(-168px);
+  }
+  100% {
+    transform: translateY(-210px);
+  }
+} */
+
+.firstComponent,
+.rowOneFirstComponent,
+.rowTwoFirstComponent {
+  /* position: relative; */
+  z-index: 10;
+  /* animation-name: mask-window;
+  animation-timeline: scroll();
+  animation-duration: 5s; */
+}
