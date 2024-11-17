@@ -6,7 +6,6 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 import { ogMeta, twitterMeta } from '@data/metadata'
 
-import Ad from '@component/Ad'
 import Container from '@component/Container'
 import MdxRemoteRender from '@component/MdxRemoteRender'
 import CollectionList from '@component/CollectionList'
@@ -63,7 +62,7 @@ async function getCollection(params) {
 
 export default async function Page({ params }) {
   const { collectionData, collectionContent } = await getCollection(params)
-  
+
 
   const componentsData = {
     componentContainer: {
@@ -89,7 +88,6 @@ export default async function Page({ params }) {
 
   return (
     <Container id="mainContent" classNames="py-8 lg:py-12 space-y-8">
-      <Ad />
 
       <div className="prose max-w-none">
         <MdxRemoteRender
