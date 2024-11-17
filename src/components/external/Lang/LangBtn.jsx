@@ -42,7 +42,7 @@ export default function LangBtn({ dataMenu, iconView, iconClick }) {
       <div className="relative mt-2">
         <ListboxButton className="relative w-full cursor-pointer rounded-md bg-white dark:bg-slate-600 dark:text-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00000096] sm:text-sm/6">
           <span className="flex items-center">
-            <Image aria-hidden="true" width={19} height={19} alt={'contry flag of ' + selected.name} src={selected.avatar} className="" />
+            <Image aria-hidden="true" width={19} height={19} alt={'contry flag of ' + selected.name} src={selected.avatar} className="w-auto h-auto " />
             <span className="ml-3 block truncate">{selected.name}</span>
           </span>
           {iconView}
@@ -59,7 +59,7 @@ export default function LangBtn({ dataMenu, iconView, iconClick }) {
               className="group cursor-pointer relative select-none py-2 pl-3 pr-9 text-gray-900 dark:text-white data-[focus]:bg-[#00000096] data-[focus]:text-white"
             >
               <div className="flex items-center">
-                <Image width={10} height={10} quality={100} alt="" src={person.avatar} className="size-5 shrink-0 " />
+                <Image width={10} height={10} quality={100} alt="" src={person.avatar} className="w-auto h-auto size-5 shrink-0 " />
                 <span className="ml-3 block truncate font-normal group-data-[selected]:font-semibold">
                   {person.name}
                 </span>

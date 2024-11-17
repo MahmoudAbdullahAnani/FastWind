@@ -2,11 +2,15 @@
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ['next-mdx-remote'],
-    images: {
+  images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'flagcdn.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
       },
     ],
   },
