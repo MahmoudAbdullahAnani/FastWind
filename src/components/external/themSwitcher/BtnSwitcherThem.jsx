@@ -7,8 +7,8 @@ export default function BtnSwitcherThem() {
 
   const handleChangeTheme = () => {
     window.localStorage.setItem("darkMode", !switchState)
-    setSwitchState(!switchState)
     document.body.classList.toggle("dark");
+    setSwitchState(!switchState)
   }
   useEffect(() => {
     window.localStorage.getItem("darkMode") === "true" && document.body.classList.add("dark");
