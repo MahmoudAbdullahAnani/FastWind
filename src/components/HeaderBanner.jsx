@@ -11,7 +11,7 @@ export default function HeaderBanner() {
     }, 10000);
   }, [])
   return (
-    <section className="-mt-px border-y border-gray-200 bg-gray-100">
+    <section className="-m-y-px bg-gray-100 dark:bg-[#000000c4] dark:text-white">
       <div className={`sticky top-0 z-10 flex gap-2 py-1 text-[12px] justify-center items-center bg-black text-white`}>
         <img src="https://flagcdn.com/80x60/ps.png" alt="Palestine Flag" className="size-6" />
         <div>

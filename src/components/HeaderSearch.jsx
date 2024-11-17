@@ -96,13 +96,13 @@ export default function HeaderSearch() {
           value={searchQuery}
           placeholder="Search..."
           id="SiteSearch"
-          className="w-full rounded-md border-gray-200 sm:text-sm"
+          className="w-full rounded-md border-gray-200 dark:border-gray-600 dark:placeholder:text-white sm:text-sm dark:text-white dark:bg-slate-600"
         />
 
         {!isInputFocused &&
           <div onClick={() => inputRef.current.focus()} className="cursor-text absolute top-[50%] right-[5%] opacity-50 translate-y-[-50%] flex gap-[.1rem] place-content-center">
-            <span className={`border rounded-lg h-fit text-[12px] w-fit px-2 py-1`}>ctrl</span>
-            <span className={`border rounded-lg h-fit text-[12px] w-fit px-2 py-1`}>k</span>
+            <span className={`border dark:border-white rounded-lg h-fit text-[12px] w-fit px-2 py-1 dark:text-white`}>ctrl</span>
+            <span className={`border dark:border-white rounded-lg h-fit text-[12px] w-fit px-2 py-1 dark:text-white`}>k</span>
           </div>
         }
 
@@ -112,18 +112,18 @@ export default function HeaderSearch() {
       </form>
 
       {showDropdown && (
-        <div className="absolute inset-x-0 top-14 z-50 rounded-md border border-gray-100 bg-white shadow-lg">
+        <div className="absolute w-[300px] inset-x-0 top-14 z-50 rounded-md border border-gray-100 bg-white dark:text-white dark:bg-black shadow-lg">
           {searchResults.length ? (
-            <ul className="max-h-64 space-y-1 overflow-auto p-2">
+            <ul className="max-h-80 space-y-1 overflow-auto p-2">
               {searchResults.map((searchResult) => (
                 <li key={searchResult.id}>
                   <Link
                     href={`/components/${searchResult.category.slug}/${searchResult.slug}`}
-                    className="flex items-center justify-between rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 focus:bg-gray-50"
+                    className="group flex items-center justify-between rounded-md px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-100 focus:bg-gray-50 hover:dark:bg-gray-600 focus:dark:bg-gray-600"
                   >
                     <span>{searchResult.title}</span>
 
-                    <span className="block rounded bg-gray-900 px-1.5 py-0.5 text-xs text-white">
+                    <span className="block rounded bg-gray-900 dark:bg-gray-600 group-hover:bg-gray-300 px-1.5 py-0.5 text-xs text-white group-hover:text-[#474747]">
                       {searchResult.category.title}
                     </span>
                   </Link>
@@ -131,7 +131,7 @@ export default function HeaderSearch() {
               ))}
             </ul>
           ) : (
-            <div className="p-4 text-center text-sm text-gray-700">
+            <div className="p-4 text-center text-sm text-gray-700 dark:text-white">
               {searchQuery ? 'Uh-no! There are no results 😢' : 'Loading search results...'}
             </div>
           )}

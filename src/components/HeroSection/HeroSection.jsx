@@ -28,18 +28,18 @@ export default function HeroSection() {
 
     })
     return (
-        <Container classNames={"px-0"}>
+        <Container classNames={"px-0 dark:bg-black"}>
             <main className="relative flex flex-nowrap items-start justify-between py-8 lg:col-span-7 lg:py-12 xl:col-span-6 overflow-hidden">
                 <div className=" mt-[80px] opacity-0 animate-fadeIn">
                     <h1 className="flex flex-nowrap gap-2 text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
-                        <span className="block xl:inline">Your</span>{' '}
-                        <span className="block text-[#29817e] xl:inline">Digital</span>
+                        <span className="block xl:inline dark:text-[#fff]">Your</span>{' '}
+                        <span className="block text-[#29817e] dark:text-[#35c9c4] xl:inline">Digital</span>
                     </h1>
                     <div className="flex flex-nowrap gap-2 mt-2">
-                        <span className="block xl:inline">Data to enrich your</span>{' '}
-                        <span className="block text-[#0b5757] xl:inline">online business</span>
+                        <span className="block xl:inline dark:text-[#fff]">Data to enrich your</span>{' '}
+                        <span className="block text-[#0b5757] dark:text-[#34aaa6] xl:inline">online business</span>
                     </div>
-                    <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
+                    <p className="mt-3 text-base text-gray-500 dark:text-[#fff] sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
                         Transform your digital presence with our comprehensive data solutions. We help businesses harness the power of data analytics to drive growth and success.
                     </p>
                 </div>
@@ -51,10 +51,10 @@ export default function HeroSection() {
                     }}
                     id="floating-window">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 backdrop-blur-sm rounded-lg"></div>
-                    <div className="before:content-[''] before:absolute before:w-[10px] before:rounded-full before:m-2 before:h-[10px] before:bg-[#570b0b] before:top-0 before:left-0 before:text-blue-500 after:content-[''] after:w-[10px] after:rounded-full after:m-2 after:h-[10px] after:bg-yellow-500 after:absolute after:top-0 after:left-5  after:text-red-500 --- flex relative bg-white/90 border-t-2 rounded-t-lg py-4 w-[1024px] shadow-xl transition-all duration-300 ease-out hover:shadow-2xl">
+                    <div className="dark:bg-slate-800 before:content-[''] before:absolute before:w-[10px] before:rounded-full before:m-2 before:h-[10px] before:bg-[#570b0b] before:top-0 before:left-0 before:text-blue-500 after:content-[''] after:w-[10px] after:rounded-full after:m-2 after:h-[10px] after:bg-yellow-500 after:absolute after:top-0 after:left-5  after:text-red-500 --- flex relative bg-white/90 border-t-2 rounded-t-lg py-4 w-[1024px] shadow-xl transition-all duration-300 ease-out hover:shadow-2xl">
                         <div className={`absolute w-[10px] rounded-full m-2 h-[10px] bg-[#27570b] top-0 left-10`}></div>
                         <div className="flex gap-5 p-4 rowOneFirstComponent">
-                            <div className="pointer-events-auto w-full max-w-[400px] rounded-lg bg-white text-[0.8125rem] text-slate-700 shadow-lg">
+                            <div className="pointer-events-auto w-full max-w-[400px] rounded-lg bg-white dark:bg-[#fffffff3] text-[0.8125rem] text-slate-700 shadow-lg">
                                 <div className="flex items-center px-3.5 py-2.5 text-slate-400">
                                     <svg className="mr-2 size-5 stroke-slate-500" fill="none" viewBox="0 0 24 24" strokeWidth="2">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -104,7 +104,7 @@ export default function HeroSection() {
                         </div>
                     </div>
                     {/* Row 2 */}
-                    <div className="flex relative bg-white/90 border-b-2 rounded-b-lg py-4 w-[1024px] shadow-xl transition-all duration-300 ease-out hover:shadow-2xl">
+                    <div className="dark:bg-slate-800 flex relative bg-white/90 border-b-2 rounded-b-lg py-4 w-[1024px] shadow-xl transition-all duration-300 ease-out hover:shadow-2xl">
                         {/* Analytics Dashboard Card */}
                         <div className="flex-1 p-4 rowTwoFirstComponent">
                             <div className="rounded-lg bg-white p-4 shadow-lg">

@@ -41,7 +41,7 @@ export default async function RootLayout({ children }) {
 
         <Header />
 
-        <main className="bg-white">{children}</main>
+        <main className="bg-white dark:bg-black">{children}</main>
 
         <Footer />
 

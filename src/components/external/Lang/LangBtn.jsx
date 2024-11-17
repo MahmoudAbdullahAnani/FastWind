@@ -38,9 +38,9 @@ export default function LangBtn({ dataMenu, iconView, iconClick }) {
 
   return (
     <Listbox value={selected} onChange={setSelected}>
-      <Label as="p" className="hidden text-sm/6 font-medium text-gray-900">Assigned to</Label>
+      <Label as="p" className="hidden text-sm/6 font-medium text-gray-900 dark:text-white">Assigned to</Label>
       <div className="relative mt-2">
-        <ListboxButton className="relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 sm:text-sm/6">
+        <ListboxButton className="relative w-full cursor-pointer rounded-md bg-white dark:bg-slate-600 dark:text-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00000096] sm:text-sm/6">
           <span className="flex items-center">
             <Image aria-hidden="true" width={19} height={19} alt={'contry flag of ' + selected.name} src={selected.avatar} className="" />
             <span className="ml-3 block truncate">{selected.name}</span>
@@ -50,13 +50,13 @@ export default function LangBtn({ dataMenu, iconView, iconClick }) {
 
         <ListboxOptions
           transition
-          className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none data-[closed]:data-[leave]:opacity-0 data-[leave]:transition data-[leave]:duration-100 data-[leave]:ease-in sm:text-sm"
+          className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white dark:bg-slate-600 dark:text-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none data-[closed]:data-[leave]:opacity-0 data-[leave]:transition data-[leave]:duration-100 data-[leave]:ease-in sm:text-sm"
         >
           {langs.map((person) => (
             <ListboxOption
               key={person.id}
               value={person}
-              className="group relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900 data-[focus]:bg-indigo-600 data-[focus]:text-white"
+              className="group cursor-pointer relative select-none py-2 pl-3 pr-9 text-gray-900 dark:text-white data-[focus]:bg-[#00000096] data-[focus]:text-white"
             >
               <div className="flex items-center">
                 <Image width={10} height={10} quality={100} alt="" src={person.avatar} className="size-5 shrink-0 " />

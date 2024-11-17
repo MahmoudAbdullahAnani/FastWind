@@ -59,7 +59,8 @@ export default function Header() {
   ]
 
   return (
-    <header className="sticky inset-x-0 top-0 z-10 border-b border-gray-200 bg-white">
+    <header className="sticky inset-x-0 top-0 z-10 border-b dark:border-b-0 border-gray-200 bg-white dark:bg-black dark:text-white">
+
       <Container classNames="relative flex h-16 items-center justify-between gap-4 sm:gap-8">
         <div className="flex items-center gap-4">
           <BrandLogo />
@@ -76,18 +77,18 @@ export default function Header() {
             <BtnSocial href="https://github.com/MahmoudAbdullahAnani/FastWind"
               rel="noreferrer"
               target="_blank"
-              className="inline-flex items-center gap-[3px] text-gray-900 hover:opacity-75" icon={<IconGithub stargazers_count={stargazers_count} showK={true} />} title={<span className={`sr-only`}> GitHub </span>}
+              className="inline-flex items-center gap-[3px] text-gray-900 dark:text-white hover:opacity-75" icon={<IconGithub stargazers_count={stargazers_count} showK={true} styleSpan={`text-black dark:text-white`} />} title={<span className={`sr-only`}> GitHub </span>}
             />
             <BtnSocial href="https://t.me/fastwindui"
               rel="noreferrer"
               target="_blank"
               showTitle={true}
 
-              className="sm:inline-flex hidden items-center gap-[3px] text-gray-900 hover:opacity-75" icon={<div title='telegram channel'>
+              className="sm:inline-flex hidden items-center gap-[3px] text-gray-900 dark:text-white hover:opacity-75" icon={<div title='telegram channel'>
                 <svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" className="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg>
               </div>} title={<span title='telegram channel' className={`[@media(min-width:850px)]:block hidden`}> Telegram </span>}
             />
-            <div className="hidden sm:flex gap-2">
+            <div className="hidden sm:flex gap-2 ">
               <LangBtn dataMenu={langs} iconClick={<IconClick />} iconView={<IconTop />} />
             </div>
             <BtnSwitcherThem />

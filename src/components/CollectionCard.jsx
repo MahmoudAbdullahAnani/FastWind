@@ -7,11 +7,11 @@ export default function CollectionCard({ componentData }) {
   const hasTag = !!componentData.tag
 
   return (
-    <Link href={`/components/${componentData.category}/${componentData.slug}`}>
-      <div className="group relative block h-full bg-white before:absolute before:inset-0 before:rounded-md before:border-2 before:border-dashed before:border-gray-900">
-        <div className="h-full rounded-md border-2 border-gray-900 bg-white transition group-hover:-translate-y-2 ltr:group-hover:-translate-x-2 rtl:group-hover:translate-x-2">
+    <Link href={`/components/${componentData.category}/${componentData.slug}`} >
+      <div className="group rounded-md relative block h-full bg-white dark:bg-slate-500 before:absolute before:inset-0 dark:before:hover:border-white before:rounded-md before:border-2 before:border-dashed before:border-gray-900">
+        <div className="h-full rounded-md border-2 border-gray-900 bg-white dark:bg-slate-600 transition group-hover:-translate-y-2 ltr:group-hover:-translate-x-2 rtl:group-hover:translate-x-2">
           <div className="p-4 sm:p-6">
-            <div className="flex items-start justify-between">
+            <div className="flex items-start justify-between ">
               <span aria-hidden="true" role="img" className="text-lg sm:text-xl">
                 {componentData.emoji}
               </span>
@@ -19,9 +19,9 @@ export default function CollectionCard({ componentData }) {
               {hasTag && <CardTag tagType={componentData.tag} />}
             </div>
 
-            <h2 className="mt-4 font-medium text-gray-900 sm:text-lg">{componentData.title}</h2>
+            <h2 className="mt-4 font-medium text-gray-900 dark:text-white sm:text-lg">{componentData.title}</h2>
 
-            <p className="mt-1 text-sm text-gray-700">{componentCount}</p>
+            <p className="mt-1 text-sm text-gray-700 dark:text-white">{componentCount}</p>
           </div>
         </div>
       </div>
@@ -39,9 +39,8 @@ function CardTag({ tagType }) {
 
   return (
     <span
-      className={`-me-1.5 -mt-1.5 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium capitalize sm:-me-3 sm:-mt-3 ${
-        isNew && 'bg-green-100 text-green-700'
-      } ${isUpdated && 'bg-blue-100 text-blue-700'}`}
+      className={`-me-1.5 -mt-1.5 whitespace-nowrap rounded-full px-2.5 py-0.5 text-xs font-medium capitalize sm:-me-3 sm:-mt-3 ${isNew && 'bg-green-100 text-green-700'
+        } ${isUpdated && 'bg-blue-100 text-blue-700'}`}
     >
       {tagType}
     </span>
