@@ -25,8 +25,6 @@ export default function HeroSection() {
         rowOneLastComponent.style.transform = `translateY(-${scrollPercentage === 0 ? scrollPercentage : scrollPercentage < 10 ? scrollPercentage + 20 : scrollPercentage < 20 ? scrollPercentage + 30 : scrollPercentage > 30 && scrollPercentage + 40}%)`
         const rowTwoFirstComponent = document.querySelector('.rowTwoFirstComponent');
         rowTwoFirstComponent.style.transform = `translateY(-${scrollPercentage === 0 ? scrollPercentage : scrollPercentage < 10 ? scrollPercentage + 20 : scrollPercentage < 20 ? scrollPercentage + 30 : scrollPercentage > 30 && scrollPercentage + 40}%)`
-
-
     })
     return (
         <Container classNames={"px-0 dark:bg-black"}>

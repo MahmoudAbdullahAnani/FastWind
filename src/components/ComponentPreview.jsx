@@ -172,7 +172,7 @@ export default function ComponentPreview({ componentData, componentContainer }) 
               )
             )}
 
-            <p className="text-sm font-medium text-gray-700">@ {previewWidth}</p>
+            {/* <p className="text-sm font-medium text-gray-700">@ {previewWidth}</p> */}
           </div>
         </div>
 

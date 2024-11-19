@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link'
 
 export default function CollectionCard({ componentData }) {
@@ -5,9 +6,11 @@ export default function CollectionCard({ componentData }) {
   const componentCount = `${componentData.count} ${componentCountPluralize}`
 
   const hasTag = !!componentData.tag
-
+  const SetClickComponrnt = () => {
+    localStorage.setItem('componentView', JSON.stringify(componentData.category))
+  }
   return (
-    <Link href={`/components/${componentData.category}/${componentData.slug}`} >
+    <Link onClick={SetClickComponrnt} href={`/components/${componentData.category}/${componentData.slug}`} >
       <div className="group rounded-md relative block h-full bg-white dark:bg-slate-500 before:absolute before:inset-0 dark:before:hover:border-white before:rounded-md before:border-2 before:border-dashed before:border-gray-900">
         <div className="h-full rounded-md border-2 border-gray-900 bg-white dark:bg-slate-600 transition group-hover:-translate-y-2 ltr:group-hover:-translate-x-2 rtl:group-hover:translate-x-2">
           <div className="p-4 sm:p-6">

@@ -7,7 +7,7 @@ import HeroBanner from '@component/HeroBanner'
 import CollectionGrid from '@component/CollectionGrid'
 import HeroSection from '@component/HeroSection/HeroSection'
 
-async function getComponents() {
+export async function getComponents() {
   const componentsPath = join(process.cwd(), '/src/data/components')
   const categoriesPath = join(process.cwd(), '/src/data/categories')
 
@@ -76,7 +76,7 @@ export default async function Page() {
         dashboard, eCommerce store and much more.
       </HeroBanner> */}
       <HeroSection />
-      
+
       <Container id="mainContent" classNames="pb-8 lg:pb-12">
         <ul className="space-y-8">
           {componentsByCategory.map(({ categoryTitle, componentItems = [] }) => {

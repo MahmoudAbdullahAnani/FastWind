@@ -9,6 +9,9 @@ import { ogMeta, twitterMeta } from '@data/metadata'
 import Container from '@component/Container'
 import MdxRemoteRender from '@component/MdxRemoteRender'
 import CollectionList from '@component/CollectionList'
+import SideRightContentComponent from '@component/Contents/SideRightContentComponent'
+import SideLeftContentComponent from '@component/Contents/SideLeftContentComponent'
+import { getComponents } from '@/page'
 
 const mdxComponents = {
   CollectionList,
@@ -62,8 +65,6 @@ async function getCollection(params) {
 
 export default async function Page({ params }) {
   const { collectionData, collectionContent } = await getCollection(params)
-
-
   const componentsData = {
     componentContainer: {
       previewInner: collectionData.container || '',
@@ -85,17 +86,28 @@ export default async function Page({ params }) {
       }
     ),
   }
+  const componentsByCategory = await getComponents()
+
 
   return (
-    <Container id="mainContent" classNames="py-8 lg:py-12 space-y-8">
-
-      <div className="prose max-w-none">
-        <MdxRemoteRender
-          mdxSource={collectionContent}
-          mdxComponents={mdxComponents}
-          mdxScope={componentsData}
-        />
+    <main className={`flex`}>
+      <div className={`sticky hidden lg:block top-[64px] max-h-[300px] w-full max-w-[250px]`}>
+        <SideLeftContentComponent componentsByCategory={componentsByCategory} />
       </div>
-    </Container>
+      <Container id="mainContent" classNames="py-8 w-full lg:py-12 space-y-8">
+
+        <div className="prose max-w-none">
+          <MdxRemoteRender
+            mdxSource={collectionContent}
+            mdxComponents={mdxComponents}
+            mdxScope={componentsData}
+          />
+        </div>
+
+      </Container>
+      <div className={`sticky hidden lg:block no-scrollbar top-[64px] max-h-[64vh] overflow-auto w-full max-w-[200px]`}>
+        <SideRightContentComponent collectionContent={collectionContent.frontmatter.components} />
+      </div>
+    </main>
   )
 }
