@@ -12,11 +12,11 @@ export default function HeroSectionLeftText() {
         experimentalSvgIcons: true,
         sources: [
             {
-                src: "//vjs.zencdn.net/v/oceans.mp4",
+                src: "/fastWind.mp4",
                 type: "video/mp4",
             },
         ],
-        poster: "/og.jpg"
+        poster: "/coverVideoHeroSection.png"
     };
     // const [coverVideo, setCoverVideo] = useState(true)
     // useEffect(() => {
@@ -35,21 +35,22 @@ export default function HeroSectionLeftText() {
     return (
         <div className="mt-[80px] opacity-0 animate-fadeIn">
             <h1 className="flex flex-nowrap gap-2 text-4xl font-bold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline dark:text-[#fff]">Your</span>{' '}
-                <span className="block text-[#29817e] dark:text-[#35c9c4] xl:inline">Digital</span>
+                <span className="block xl:inline dark:text-[#fff]">Fast</span>{' '}
+                <span className="block text-[#29817e] dark:text-[#35c9c4] xl:inline">Wind</span>
             </h1>
             <div className="flex flex-nowrap gap-2 mt-2">
-                <span className="block xl:inline dark:text-[#fff]">Data to enrich your</span>{' '}
-                <span className="block text-[#0b5757] dark:text-[#34aaa6] xl:inline">online business</span>
+                <span className="block xl:inline dark:text-[#fff]">Effortless UI, Open-source, easy-to-use</span>{' '}
+                <span className="block text-[#0b5757] dark:text-[#34aaa6] xl:inline">for Developers</span>
             </div>
             <p className="mt-3 text-base text-gray-500 dark:text-[#fff] sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl">
-                Transform your digital presence with our comprehensive data solutions. We help businesses harness the power of data analytics to drive growth and success.
+                FastWind is your ultimate companion for building beautiful UI components. Open-source, developer-friendly, and designed for seamless integration—just copy, paste, and create.
             </p>
             <div className="mt-5">
                 <button className="bg-[#29817e] hover:bg-[#35c9c4] text-white font-bold py-2 px-4 rounded">
-                    Get Started
+                    Start Building Now
                 </button>
             </div>
+
 
             <div className={`relative overflow-hidden my-5 max-w-[500px] border rounded-lg`}>
                 <VideoPlayer

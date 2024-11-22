@@ -6,6 +6,7 @@ import Container from '@component/Container'
 import HeroBanner from '@component/HeroBanner'
 import CollectionGrid from '@component/CollectionGrid'
 import HeroSection from '@component/HeroSection/HeroSection'
+import SlideShowItems from '@component/HeroSection/SlideShowItems'
 
 export async function getComponents() {
   const componentsPath = join(process.cwd(), '/src/data/components')
@@ -76,7 +77,10 @@ export default async function Page() {
         dashboard, eCommerce store and much more.
       </HeroBanner> */}
       <HeroSection />
-
+      <div className='my-8'>
+        <h2 class="text-xl text-center py-2 mx-8 dark:text-[#cccfcf] text-[#a8abab] hover:text-[#000]">All UI Components</h2>
+        <SlideShowItems componentsByCategory={componentsByCategory} />
+      </div>
       <Container id="mainContent" classNames="pb-8 lg:pb-12">
         <ul className="space-y-8">
           {componentsByCategory.map(({ categoryTitle, componentItems = [] }) => {
